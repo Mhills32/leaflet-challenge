@@ -34,8 +34,7 @@ let map = L.map("map", {
     { label: '90+', color: getMarkerColor(100) }
   ];
   
-  d3.json(link)
-  .then(data => {
+  d3.json(link).then(data => {
     function getMarkerSize(magnitude) {
       return magnitude * 5; 
     }
@@ -70,7 +69,7 @@ let map = L.map("map", {
       ranges.forEach(range => {
         div.innerHTML += `
           <div>
-            <span class="legend-color" style="background-color: ${range.color}"></span>
+            <span class="legend-color" style="background-color: ${range.color};"></span>
             <span class="legend-label">${range.label}</span>
           </div>
         `;
@@ -85,6 +84,8 @@ let map = L.map("map", {
   
     legend.addTo(map);
   });
+  
+  
   
 
 
